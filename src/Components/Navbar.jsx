@@ -9,10 +9,10 @@ import Offer from './Offer';
 const Navbar = () => {
     return (
         <>
-            <Flex alignItems="center" mt="4">
+            <Flex alignItems="center" mt="4" mb="-5">
                 <Box w="39%">
                 </Box>
-                <Link to="/"><Image w="70" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243" /></Link>
+                <Link to="/"><Image w="70" h="10" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243" /></Link>
                 <Spacer></Spacer>
                 <Flex alignItems="center" gap="6" pr="10" fontSize="20">
                     <Flex alignItems="center" gap="3">
@@ -24,7 +24,7 @@ const Navbar = () => {
                 </Flex>
             </Flex>
             <Menu/>
-            <Spacer></Spacer><Link to="" ><Text mt="5" color="red">CLEARANCE</Text></Link>
+            <Spacer></Spacer><Link to="" ><Text mt="2" mb="2" color="red">CLEARANCE</Text></Link>
             <Offer/>
         </>
     )
