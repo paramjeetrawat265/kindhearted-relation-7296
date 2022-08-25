@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CarouselData } from './CarouselData';
 import styles from "./Carousels.module.css"
-import { Button } from "@chakra-ui/react"
-import { BsChevronCompactRight,BsChevronCompactLeft } from "react-icons/bs"
+import { FaChevronLeft,FaChevronRight } from "react-icons/fa"
 
 const Carousels = ({ slides }) => {
 
@@ -33,8 +32,8 @@ const Carousels = ({ slides }) => {
   return (
     <div>
       <section className={styles.slider}>
-        <BsChevronCompactLeft className={styles.leftArrow} onClick={preSlide} />
-        <BsChevronCompactRight className={styles.rightArrow} onClick={nextSlide} />
+        <FaChevronLeft className={styles.leftArrow} onClick={preSlide} />
+        <FaChevronRight className={styles.rightArrow} onClick={nextSlide} />
         {CarouselData.map((slide, index) => (
           <div className={index === current ? 'slide active' : 'slide'} key={index}>
             {index === current && (<div><img src={slide.image} alt="products" className={styles.image} />
