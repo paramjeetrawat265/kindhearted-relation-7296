@@ -1,6 +1,5 @@
 import React from 'react'
-import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup, Flex, Spacer } from "@chakra-ui/react"
-import { Link } from "react-router-dom"
+import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup} from "@chakra-ui/react"
 import BottomCategory from './BottomCategory'
 
 const Signup = () => {
