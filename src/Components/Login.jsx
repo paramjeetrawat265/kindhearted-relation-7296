@@ -1,6 +1,7 @@
 import React from 'react'
-import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup, Flex, Spacer } from "@chakra-ui/react"
+import { Text, FormControl, Input, FormLabel, InputRightElement, InputGroup, Flex, Spacer, Button } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
+import BottomCategory from './BottomCategory'
 
 const Login = () => {
 
@@ -10,7 +11,7 @@ const Login = () => {
         <div>
             <Text mt="10px" fontSize='5xl' fontFamily="Tiemann, serif" color="black">LOGIN</Text>
             <FormControl width="500px" ml="35%">
-                <FormLabel fontFamily="Futura, sans-serif" fontStyle="italic">Email</FormLabel>
+                <FormLabel fontFamily="Futura, sans-serif" mt="10" fontStyle="italic">Email</FormLabel>
                 <Input
                     focusBorderColor='black'
                     variant='outline'
@@ -19,7 +20,7 @@ const Login = () => {
                     type='email'
                     placeholder='Enter password'
                 />
-                <Flex>
+                <Flex mt="10">
                     <FormLabel fontFamily="Futura, sans-serif" fontStyle="italic">Password</FormLabel>
                     <Spacer></Spacer>
                     <FormLabel fontFamily="Futura, sans-serif" _hover={{ cursor: "pointer" }} fontStyle="italic">Forget Password?</FormLabel>
@@ -38,17 +39,19 @@ const Login = () => {
                     </InputRightElement>
                 </InputGroup>
             </FormControl>
-            <Button bg="black" color="white" size='lg' w="500px" ml="40px" mt="50px">
+            <Button bg="black" borderRadius="0"  color="white" size='lg' w="500px" ml="40px" mt="50px" _hover={{bg:"#D3D3D3", color:"black"}}>
                 LOGIN
             </Button>
             <hr/>
             <Link to="/signup">
-                <Button bg="white" color="black" size='lg' _hover={{bg:"white"}}
-                     ml="40px" mt="20px" 
+                <Button bg="white" color="black" size='lg'  
+                    _hover={{bg:"white", color:"black"}}
+                     ml="40px" mt="20px" mb="50px"
                     fontStyle="italic" fontSize="20">
                     Create account
                 </Button>
             </Link>
+            <BottomCategory/>
         </div>
     )
 }
