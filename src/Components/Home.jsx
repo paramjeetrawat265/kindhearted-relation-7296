@@ -1,8 +1,12 @@
 import React from 'react'
+import { CarouselData } from './CarouselData'
+import Carousels from './Carousels'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+        <Carousels slides={CarouselData}/>
+    </div>
   )
 }
 
