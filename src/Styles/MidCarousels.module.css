@@ -1,0 +1,67 @@
+.slider {
+    margin-top: -48px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 100vw;
+    height: 500px;
+    object-fit: cover;
+}
+
+.head {
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.desc {
+    width:100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.button {
+    position: absolute;
+    font-weight: bold;
+    padding:10px 25px;
+    background-color: white;
+    color:black;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: translate3d(1800);
+}
