@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { CarouselData } from './CarouselData';
-import styles from "../Styles/Carousels.module.css"
+import styles from "../Styles/MidCarousels.module.css"
 import { FaChevronLeft,FaChevronRight } from "react-icons/fa"
 
-const Carousels = ({ slides }) => {
+const MidCarousel = ({ slides }) => {
 
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -17,14 +17,6 @@ const Carousels = ({ slides }) => {
     return () => clearInterval(id)
 })
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
-  }
-
-  const preSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
-  }
-
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
   }
@@ -32,8 +24,6 @@ const Carousels = ({ slides }) => {
   return (
     <div>
       <section className={styles.slider}>
-        <FaChevronLeft className={styles.leftArrow} onClick={preSlide} />
-        <FaChevronRight className={styles.rightArrow} onClick={nextSlide} />
         {CarouselData.map((slide, index) => (
           <div className={index === current ? 'slide active' : 'slide'} key={index}>
             {index === current && (<div><img src={slide.image} alt="products" className={styles.image} />
@@ -50,4 +40,4 @@ const Carousels = ({ slides }) => {
   )
 }
 
-export default Carousels
+export default MidCarousel
