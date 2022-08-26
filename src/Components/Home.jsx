@@ -18,7 +18,7 @@ const Home = () => {
         <MidCarousel slides={CarouselData}/>
         <NewArrivals/>
         <TrendingNow/>
-        <BottomCategory/>
+        
     </div>
   )
 }

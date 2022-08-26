@@ -36,7 +36,7 @@ const Login = () => {
                     size='lg'
                     pr='4.5rem'
                     type='email'
-                    placeholder='Enter password'
+                    placeholder='Enter Email'
                     name="em"
                     value={data.em}
                     onChange={handleChange}
