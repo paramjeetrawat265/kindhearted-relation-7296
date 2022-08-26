@@ -25,7 +25,7 @@ const BottomCategory = () => {
     ]
 
     return (
-        <Box>
+        <Box mt="10">
             <Flex p="6" justifyContent="space-evenly" gap="4">
                 {
                     product.map(({ url, title, desc, cat }) => (

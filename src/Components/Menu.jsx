@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Flex, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
-import styles from "./Menu.module.css"
+import styles from "../Styles/Menu.module.css"
 import Dropdown from './Dropdown'
 const Menu = () => {
 

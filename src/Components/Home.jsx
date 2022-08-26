@@ -3,9 +3,11 @@ import BottomCategory from './BottomCategory'
 import { CarouselData } from './CarouselData'
 import Carousels from './Carousels'
 import MidCarousel from './MidCarousel'
+import NewArrivals from './NewArrivals'
 import Offer from './Offer'
 import ShopByCategory from './ShopByCategory'
 import TopPromo from './TopPromo'
+import TrendingNow from './TrendingNow'
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
         <TopPromo/>
         <ShopByCategory/>
         <MidCarousel slides={CarouselData}/>
+        <NewArrivals/>
+        <TrendingNow/>
         <BottomCategory/>
     </div>
   )

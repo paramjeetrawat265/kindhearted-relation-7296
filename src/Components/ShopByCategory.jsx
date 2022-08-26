@@ -53,8 +53,8 @@ const ShopByCategory = () => {
             <Grid templateColumns='repeat(5, 1fr)' gap="6" w="90%" m="auto">
                 {
                     category.map(({ image, title }) => (
-                        <Link to="">
-                            <Box>
+                        <Link to="" >
+                            <Box key={image}>
                                 <Image _hover={{ transform: "scale(1.03)", transitionDuration: "1s" }} w="100%" h="200px" objectFit="cover" src={image} />
                                 <Text mt="5" letterSpacing={"0.2em"} fontFamily="Futura,sans-serif" textAlign="center">{title}</Text>
                             </Box>
