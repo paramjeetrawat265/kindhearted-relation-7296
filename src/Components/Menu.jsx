@@ -1,8 +1,12 @@
-import React from 'react'
-import { Flex,Text } from "@chakra-ui/react"
+import React, { useState } from 'react'
+import { Flex, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import styles from "./Menu.module.css"
+import Dropdown from './Dropdown'
 const Menu = () => {
+
+    const [dropdown, setDropdown] = useState(false);
+
     const menus = [
         {
             title: "CLOTHING",
@@ -38,15 +42,29 @@ const Menu = () => {
         },
     ]
     return (
-        <Flex gap="10" alignItems="center" justifyContent="center" mt="10">
-            {
-                menus.map(({title, id}) => (
-                    <div className={styles.link} key={id} >
-                        <Link to="/"><Text>{title}</Text></Link>
-                    </div>
-                ))
-            }
-        </Flex>
+        <div className='main'>
+            <Flex gap="10" alignItems="center" justifyContent="center" mt="10">
+                {
+                    menus.map(({ title, id }) => {
+                        if (title === "CLOTHING") {
+                            return (
+                                <li className={styles.link} key={id}
+                                    onMouseEnter={() => setDropdown(true)}
+                                    onMouseLeave={() => setDropdown(false)} >
+                                    <Link to="/"><Text>{title}</Text></Link>
+                                    {dropdown && <Dropdown />}
+                                </li>
+                            );
+                        }
+                        return (
+                            <div className={styles.link} key={id}>
+                                <Link to="/"><Text>{title}</Text></Link>
+                            </div>
+                        )
+                    })
+                }
+            </Flex>
+        </div>
     )
 }
 

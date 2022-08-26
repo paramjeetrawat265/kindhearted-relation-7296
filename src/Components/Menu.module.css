@@ -1,7 +1,12 @@
 .link{
     font-family: Futura,sans-serif;
     border:2px solid transparent;
+    list-style: none;
 }
 .link:hover{
     border-bottom: 2px solid black;
+}
+.main{
+    height: 50px;
+    background-color: aliceblue;
 }

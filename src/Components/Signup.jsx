@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup} from "@chakra-ui/react"
 import BottomCategory from './BottomCategory'
 
+
 const Signup = () => {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
