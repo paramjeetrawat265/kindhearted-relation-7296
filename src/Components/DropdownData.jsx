@@ -1,0 +1,23 @@
+export const DropdownData=[
+    {
+        title:"Trouser"
+    },
+    {
+        title:"T-Shirt"
+    },
+    {
+        title:"Pants"
+    },
+    {
+        title:"Shirts"
+    },
+    {
+        title:"Jean"
+    },
+    {
+        title:"Shoes"
+    },
+    {
+        title:"Watch"
+    }
+]

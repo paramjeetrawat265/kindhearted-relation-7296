@@ -1,8 +1,8 @@
 import axios from "axios";
 export function Create(){
-    axios.post("",{
-        firstName:fname,
-        lastName:lname,
+    axios.post("https://chalo-api.herokuapp.com/BlueflyUsers",{
+        fName:firstname,
+        lName:lastname,
         email:em,
         password:pass,
     })
