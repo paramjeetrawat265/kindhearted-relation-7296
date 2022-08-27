@@ -1,14 +1,40 @@
-import React from 'react'
-import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup} from "@chakra-ui/react"
+import React, { useState } from 'react'
+import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup } from "@chakra-ui/react"
 import BottomCategory from './BottomCategory'
+import { Create } from '../Api/Api'
+import { Navigate } from 'react-router-dom'
 
 
 const Signup = () => {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
+    const [status, setStatus] = useState(false)
+    const [data, setData] = useState({
+        firstName: "",
+        lastName: "",
+        em: "",
+        pass: ""
+    })
+    function handleChange(e) {
+        const { name, value } = e.target
+        setData({
+            ...data, [name]: value
+        })
+    }
+    // console.log(data)
 
-    function handleCreate(){
+    function handleCreate(e) {
+        e.preventDefault();
+        Create(data).then(res => {
+            console.log(res)
+            if (res.status == 201) {
+                setStatus(true)
+            }
+        })
+    }
 
+    if(status){
+        return <Navigate to="/login"/>
     }
 
     return (
@@ -23,6 +49,9 @@ const Signup = () => {
                     size='lg'
                     pr='4.5rem'
                     type='text'
+                    name="firstName"
+                    value={data.firstName}
+                    onChange={handleChange}
                 />
 
                 <FormLabel fontFamily="Futura, sans-serif" mt="12" fontStyle="italic">Last Name</FormLabel>
@@ -32,6 +61,9 @@ const Signup = () => {
                     size='lg'
                     pr='4.5rem'
                     type='text'
+                    name="lastName"
+                    value={data.lastName}
+                    onChange={handleChange}
                 />
 
                 <FormLabel fontFamily="Futura, sans-serif" mt="12" fontStyle="italic">Email</FormLabel>
@@ -41,6 +73,9 @@ const Signup = () => {
                     size='lg'
                     pr='4.5rem'
                     type='email'
+                    name="em"
+                    value={data.em}
+                    onChange={handleChange}
                 />
 
                 <FormLabel fontFamily="Futura, sans-serif" mt="12" fontStyle="italic">Password</FormLabel>
@@ -49,6 +84,9 @@ const Signup = () => {
                         focusBorderColor='black'
                         pr='4.5rem'
                         type={show ? 'text' : 'password'}
+                        name="pass"
+                        value={data.pass}
+                        onChange={handleChange}
                     />
                     <InputRightElement width='4.5rem'>
                         <Button h='1.75rem' size='sm' onClick={handleClick}>
@@ -57,12 +95,12 @@ const Signup = () => {
                     </InputRightElement>
                 </InputGroup>
             </FormControl>
-            <Button bg="black" color="white" size='lg' w="500px" ml="40px" mt="50px" mb="90px" 
-            borderRadius="0" transition="bg 2s"
-            _hover={{color:"#D3D3D3", bg:"white"}} onClick={handleCreate}>
+            <Button bg="black" color="white" size='lg' w="500px" ml="40px" mt="50px" mb="90px"
+                borderRadius="0" transition="bg 2s"
+                _hover={{ color: "black", bg: "aliceblue" }} onClick={handleCreate}>
                 Create
             </Button>
-            <BottomCategory/>
+            <BottomCategory />
         </div>
     )
 }

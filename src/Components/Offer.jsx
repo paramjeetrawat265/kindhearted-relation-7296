@@ -23,7 +23,6 @@ const Offer = () => {
             }
             setCount(count + 1)
         }, 2000)
-        console.log(id)
         return () => clearInterval(id)
     })
 

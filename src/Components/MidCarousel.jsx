@@ -7,13 +7,11 @@ const MidCarousel = ({ slides }) => {
 
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  console.log(length)
 
   useEffect(() => {
     const id = setInterval(() => {
       setCurrent(current === length - 1 ? 0 : current + 1)
     }, 4000)
-    console.log(id)
     return () => clearInterval(id)
 })
 
