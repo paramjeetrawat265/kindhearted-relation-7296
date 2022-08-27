@@ -1,29 +1,40 @@
 import React, { useState } from 'react'
-import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup} from "@chakra-ui/react"
+import { Text, FormControl, Input, FormLabel, InputRightElement, Button, InputGroup } from "@chakra-ui/react"
 import BottomCategory from './BottomCategory'
 import { Create } from '../Api/Api'
+import { Navigate } from 'react-router-dom'
 
 
 const Signup = () => {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
-    const [data,setData]=useState({
-        firstName:"",
-        lastName:"",
-        em:"",
-        pass:""
+    const [status, setStatus] = useState(false)
+    const [data, setData] = useState({
+        firstName: "",
+        lastName: "",
+        em: "",
+        pass: ""
     })
-    function handleChange(e){
-        const{name,value}=e.target
+    function handleChange(e) {
+        const { name, value } = e.target
         setData({
-            ...data,[name]:value
+            ...data, [name]: value
         })
     }
     // console.log(data)
 
-    function handleCreate(e){
+    function handleCreate(e) {
         e.preventDefault();
-        Create(data)
+        Create(data).then(res => {
+            console.log(res)
+            if (res.status == 201) {
+                setStatus(true)
+            }
+        })
+    }
+
+    if(status){
+        return <Navigate to="/login"/>
     }
 
     return (
@@ -84,12 +95,12 @@ const Signup = () => {
                     </InputRightElement>
                 </InputGroup>
             </FormControl>
-            <Button bg="black" color="white" size='lg' w="500px" ml="40px" mt="50px" mb="90px" 
-            borderRadius="0" transition="bg 2s"
-            _hover={{color:"black", bg:"aliceblue"}} onClick={handleCreate}>
+            <Button bg="black" color="white" size='lg' w="500px" ml="40px" mt="50px" mb="90px"
+                borderRadius="0" transition="bg 2s"
+                _hover={{ color: "black", bg: "aliceblue" }} onClick={handleCreate}>
                 Create
             </Button>
-            <BottomCategory/>
+            <BottomCategory />
         </div>
     )
 }

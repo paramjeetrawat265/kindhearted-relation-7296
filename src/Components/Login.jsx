@@ -1,28 +1,38 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Text, FormControl, Input, FormLabel, InputRightElement, InputGroup, Flex, Spacer, Button } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import BottomCategory from './BottomCategory'
 import { Loged } from '../Api/Api'
+import { AppProvider } from '../AppContextProvider/AppContextPro'
+import {Navigate } from "react-router-dom"
 
 const Login = () => {
-
+    const { isAuth, setIsAuth } = useContext(AppProvider);
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
-    const [data,setData]=useState({
-        em:"",
-        pass:""
+    const [data, setData] = useState({
+        em: "",
+        pass: ""
     })
-    const handleChange=(e)=>{
-        const {name,value}=e.target;
+
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
         setData({
-            ...data,[name]:value
+            ...data, [name]: value
         })
     }
 
-    const handleLogin=()=>{
-        Loged(data).then(res=>{
-            console.log(res)
+    const handleLogin = () => {
+        Loged(data).then(res => {
+            if (res == 200 && res.data.length > 0) {
+                setIsAuth(true)
+            }
         })
+    }
+
+    if(isAuth){
+        return <Navigate to="/"/>
     }
 
     return (
@@ -63,20 +73,20 @@ const Login = () => {
                     </InputRightElement>
                 </InputGroup>
             </FormControl>
-            <Button bg="black" borderRadius="0"  color="white" size='lg' w="500px" ml="40px" mt="50px" _hover={{bg:"#D3D3D3", color:"black"}} 
-            onClick={handleLogin}>
+            <Button bg="black" borderRadius="0" color="white" size='lg' w="500px" ml="40px" mt="50px" _hover={{ bg: "#D3D3D3", color: "black" }}
+                onClick={handleLogin}>
                 LOGIN
             </Button>
-            <hr/>
+            <hr />
             <Link to="/signup">
-                <Button bg="white" color="black" size='lg'  
-                    _hover={{bg:"white", color:"black"}}
-                     ml="40px" mt="20px" mb="50px"
+                <Button bg="white" color="black" size='lg'
+                    _hover={{ bg: "white", color: "black" }}
+                    ml="40px" mt="20px" mb="50px"
                     fontStyle="italic" fontSize="20">
                     Create account
                 </Button>
             </Link>
-            <BottomCategory/>
+            <BottomCategory />
         </div>
     )
 }

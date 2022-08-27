@@ -1,19 +1,19 @@
 import axios from "axios";
-export function Create(datas={}){
-    console.log(datas)
-    return axios.post("https://chalo-api.herokuapp.com/BlueflyUsers",{
-        fname:datas.firstName,
-        lname:datas.lastName,
-        email:datas.em,
-        password:datas.pass,
+export function Create(data = {}) {
+    console.log(data)
+    return axios.post("https://chalo-api.herokuapp.com/BlueflyUsers", {
+        fname: data.firstName,
+        lname: data.lastName,
+        email: data.em,
+        password: data.pass,
     })
 }
 
-export function Loged(params={}){
-    return axios.get("https://chalo-api.herokuapp.com/BlueflyUsers",{
-        params:{
-            email:params.em,
-            password:params.pass
+export function Loged(params = {}) {
+    return axios.get("https://chalo-api.herokuapp.com/BlueflyUsers", {
+        params: {
+            _sort: params.sort,
+            _order: params.order
         }
-    }).then(res=>{return (res)})
+    }).then(res => { return (res) })
 }

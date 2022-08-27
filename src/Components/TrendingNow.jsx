@@ -21,7 +21,7 @@ const TrendingNow = () => {
             <Heading mt="20" mb="20px" size="2xl" fontFamily={"Tiemann,serif"}
                 fontWeight="400"
                 lineHeight="1">Trending Now</Heading>
-            <Link to=""><Button mb="10" _hover={{bg:"white" ,border:"2px"}}
+            <Link to="/sidebar"><Button mb="10" _hover={{bg:"white" ,border:"2px"}}
                 letterSpacing=".3em"
                 display="inline-block"
                 fontFamily="Futura,sans-serif"
@@ -40,8 +40,8 @@ const TrendingNow = () => {
                             <Text letterSpacing={"0.2em"}>{title}</Text>
                             <Box fontSize={"16px"} fontFamily="Futura,sans-serif">
                                 <Flex fontWeight={"400"} letterSpacing={".025em"} alignItems="center" gap="5" justifyContent="center">
-                                    <Text><strike>₹{mrp}</strike></Text>
-                                    <Text >₹{price}</Text>
+                                    <Text><strike>${mrp}</strike></Text>
+                                    <Text >${price}</Text>
                                     <Text color="#ff4e4e">Save {dis}%</Text>
                                 </Flex>
                             </Box>
