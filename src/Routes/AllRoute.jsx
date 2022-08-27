@@ -6,6 +6,7 @@ import Login from '../Components/Login'
 import Pumpheel from '../Components/Pumpheel'
 import Sidebar from '../Components/Sidebar'
 import Signup from '../Components/Signup'
+import SingleProduct from '../Components/SingleProduct'
 import Sunglass from '../Components/Sunglass'
 import Tshirt from '../Components/Tshirt'
 import WomenDress from '../Components/WomenDress'
@@ -23,6 +24,7 @@ const AllRoute = () => {
             <Route path="/sunglass" element={<Sunglass/>}/>
             <Route path="/womensneaker" element={<WomenSneaker/>}/>
             <Route path="/tshirt" element={<Tshirt/>}/>
+            <Route path="/products/:id" element={<SingleProduct/>}/>
         </Routes>
     )
 }

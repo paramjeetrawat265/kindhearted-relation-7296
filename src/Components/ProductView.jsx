@@ -1,10 +1,12 @@
 import { Box, Grid, Image, Text, Flex } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 
 const ProductView = ({ data = [] }) => {
   return (
     <div>
-      <Grid templateColumns='repeat(3, 1fr)' gap={2} mb="20" width="100%" justifyContent="center">
+      <Grid templateColumns='repeat(3, 1fr)' gap={3} mb="20" width="100%" justifyContent="center">
         {
           data.map(({ image, title, price, discount, id, brand, image2 }) => {
             const save = price / 100 * discount
@@ -17,7 +19,7 @@ const ProductView = ({ data = [] }) => {
             function MouseExit(){
               img=image
             }
-            return (<Box key={id}>
+            return (<Link to={`/products/${id}`}><Box key={id}>
               <Box w="100%" h="250">
                 <Image w="90%" h="230" src={img} onMouseEnter={MouseEnter} onMouseLeave={MouseExit} ></Image>
               </Box>
@@ -36,6 +38,7 @@ const ProductView = ({ data = [] }) => {
                 </Flex>
               </Box>
             </Box>
+            </Link>
             )
           })
         }
