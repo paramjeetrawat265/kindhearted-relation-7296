@@ -32,18 +32,20 @@ const SingleProduct = () => {
 
     return (
         <>
-            <Flex justifyContent={"space-evenly"} gap="5">
-                <Grid justifyContent={"start"} alignItems="left" gap="-4" width="15%" height="400px" p="4">
-                        <Image w="200px" objectFit="cover" h="100px" src={data.image}></Image>
-                        <Image w="200px" objectFit="cover" h="100px" src={data.image2}></Image>
+            <Flex justifyContent={"center"} gap="2" mt="10">
+                <Grid justifyContent={"start"} alignItems="left" width="10%" height="400px" p="4" gap="0">
+                    <Image border="1px solid black" w="100px" objectFit="cover" h="100px" src={data.image}></Image>
+                    <Box mt="-10">
+                        <Image border="1px solid black"  w="100px" objectFit="cover" h="100px" src={data.image2}></Image>
+                    </Box>
                 </Grid>
-                <Box width="45%">
-                    <Image src={data.image} width="100%" height="500px"></Image>
+                <Box width="45%" >
+                    <Image border={"2px solid black"} src={data.image} width="100%" height="600px"></Image>
                 </Box>
                 <Box width="30%" marginRight={"50px"}>
                     {/* Top Right Side of Description Page */}
                     <Box textAlign={"left"}>
-                        <Text>{data.brand}</Text>
+                        <Text fontWeight={"800"}>{data.brand}</Text>
                         <Text>{data.title}</Text>
                         <Box textAlign={"left"} fontSize={"16px"} fontFamily="Futura,sans-serif" mb="5">
                             <Flex fontWeight={"400"} letterSpacing={".025em"} gap="5" justifyContent="start">

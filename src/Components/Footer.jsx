@@ -13,7 +13,7 @@ const Footer = () => {
 
     return (
         <div>
-            <Box p="6" bgColor={"#D3D3D3"}>
+            <Box mt="4" p="6" bgColor={"#D3D3D3"}>
                 <Flex>
                     <Box width="37%">
                         <Heading textAlign={"left"} ml="6%" fontSize="15px" fontWeight="500"
