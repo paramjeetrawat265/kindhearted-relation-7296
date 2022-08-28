@@ -20,6 +20,7 @@ const ProductView = ({ data = [] }) => {
               img=image
             }
             return (<Link to={`/products/${id}`}><Box key={id}>
+              {console.log(id)}
               <Box w="100%" h="250">
                 <Image w="90%" h="230" src={img} onMouseEnter={MouseEnter} onMouseLeave={MouseExit} ></Image>
               </Box>

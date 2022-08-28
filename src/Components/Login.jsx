@@ -24,8 +24,10 @@ const Login = () => {
     }
 
     const handleLogin = () => {
+        console.log("hello")
         Loged(data).then(res => {
-            if (res == 200 && res.data.length > 0) {
+            console.log(res)
+            if (res.status == 200 && res.data.length > 0) {
                 setIsAuth(true)
             }
         })
@@ -77,7 +79,7 @@ const Login = () => {
                 onClick={handleLogin}>
                 LOGIN
             </Button>
-            <hr />
+            <br color='white'/>
             <Link to="/signup">
                 <Button bg="white" color="black" size='lg'
                     _hover={{ bg: "white", color: "black" }}
