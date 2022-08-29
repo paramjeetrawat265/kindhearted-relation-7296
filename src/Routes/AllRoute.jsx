@@ -4,6 +4,7 @@ import Handbag from '../Components/Handbag'
 import Home from '../Components/Home'
 import Login from '../Components/Login'
 import Pumpheel from '../Components/Pumpheel'
+import Search from '../Components/Search'
 import Sidebar from '../Components/Sidebar'
 import Signup from '../Components/Signup'
 import SingleProduct from '../Components/SingleProduct'
@@ -25,6 +26,7 @@ const AllRoute = () => {
             <Route path="/womensneaker" element={<WomenSneaker/>}/>
             <Route path="/tshirt" element={<Tshirt/>}/>
             <Route path="/products/:id" element={<SingleProduct/>}/>
+            <Route path="/search/:id" element={<Search/>}/>
         </Routes>
     )
 }

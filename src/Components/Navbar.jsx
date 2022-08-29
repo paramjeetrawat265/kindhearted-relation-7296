@@ -18,8 +18,8 @@ const Navbar = () => {
                 <Spacer></Spacer>
                 <Flex alignItems="center" gap="6" pr="10" fontSize="20">
                     <div className="search-box" >
-                        <input type="text" className="search-input" onChange={(e) => setText(e.target.value)} placeholder="Start Looking For Something!" />
-                        <Link to={"/"} state={{ query: text }} className="search-btn" href="#">
+                        <input type="text" className="search-input" onChange={(e) => setText(e.target.value)} placeholder="Search..." />
+                        <Link to={`/search/${text}`} state={{ query: text }} className="search-btn" href="#">
                             <SearchIcon />
                         </Link>
                     </div>
