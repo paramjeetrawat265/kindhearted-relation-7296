@@ -10,48 +10,56 @@ const Menu = () => {
     const menus = [
         {
             title: "CLOTHING",
-            id: 0
+            id: 0,
+            path:"/womendress"
         },
         {
             title: "SHOES",
-            id: 1
+            id: 1,
+            path:"/pumpheel"
         },
         {
             title: "HANDBAGS & ACCESSORIES",
-            id: 2
+            id: 2,
+            path:"/handbag"
         },
         {
             title: "DESIGNERS",
-            id: 3
+            id: 3,
+            path:"/womensneaker"
         },
         {
             title: "SUNGLASSES",
-            id: 4
+            id: 4,
+            path:"/sunglass"
         },
         {
             title: "JEWELRY & WATCHES",
-            id: 5
+            id: 5,
+            path:"tshirt"
         },
         {
             title: "UNDER $50",
-            id: 6
+            id: 6,
+            path:"sunglass"
         },
         {
             title: "BEAUTY",
-            id: 7
+            id: 7,
+            path:"sunglass"
         },
     ]
     return (
         <div className='main'>
             <Flex gap="10" alignItems="center" justifyContent="center" mt="10">
                 {
-                    menus.map(({ title, id }) => {
+                    menus.map(({ title, id, path }) => {
                         if (title === "CLOTHING") {
                             return (
                                 <li className={styles.link} key={id}
-                                    onMouseEnter={() => setDropdown(true)}
+                                    // onMouseEnter={() => setDropdown(true)}
                                     onMouseLeave={() => setDropdown(false)} >
-                                    <Link to="/"><Text>{title}</Text></Link>
+                                    <Link to={path}><Text>{title}</Text></Link>
                                     {dropdown && <Dropdown />}
                                 </li>
                             );

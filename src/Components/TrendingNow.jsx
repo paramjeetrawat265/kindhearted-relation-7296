@@ -7,7 +7,7 @@ const TrendingNow = () => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
-        axios.get(`https://chalo-api.herokuapp.com/BlueflyTrendingNow`)
+        axios.get(`https://cyclic-server.onrender.com/BlueflyTrendingNow`)
             .then(res => {
                 setData(res.data);
             })

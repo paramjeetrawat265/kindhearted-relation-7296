@@ -14,7 +14,7 @@ const SidebarData = ({ data, title }) => {
             <Box textAlign={"left"}>
                 <Flex direction={'column'} gap={1}>
                     {data.map((ele) => (
-                        <Flex gap={2}> key={ele.id}
+                        <Flex gap={2} key={ele.id}> 
                             <Checkbox size={"md"} border="#666666" />
                             <Text color={'#666666'} fontSize={16}>{ele}</Text>
                         </Flex>

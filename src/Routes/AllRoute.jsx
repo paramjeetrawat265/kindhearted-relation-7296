@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes,Route } from "react-router-dom"
+import AllProduct from '../Components/AllProduct'
+import Cart from '../Components/Cart'
 import Handbag from '../Components/Handbag'
 import Home from '../Components/Home'
 import Login from '../Components/Login'
@@ -25,8 +27,10 @@ const AllRoute = () => {
             <Route path="/sunglass" element={<Sunglass/>}/>
             <Route path="/womensneaker" element={<WomenSneaker/>}/>
             <Route path="/tshirt" element={<Tshirt/>}/>
-            <Route path="/products/:id" element={<SingleProduct/>}/>
+            <Route path="/allproducts" element={<AllProduct/>}/>
             <Route path="/search/:id" element={<Search/>}/>
+            <Route path="/products/:id" element={<SingleProduct/>}/>
+            <Route path="/cart/:id" element={<Cart/>}/>
         </Routes>
     )
 }

@@ -6,7 +6,7 @@ import ProductView from './ProductView';
 import Sidebar from './Sidebar';
 
 function getData() {
-  return axios.get(`https://chalo-api.herokuapp.com/BlueflyHeels`)
+  return axios.get(`https://cyclic-server.onrender.com/BlueflyHeels`)
     .then(res => {
       return res
     })

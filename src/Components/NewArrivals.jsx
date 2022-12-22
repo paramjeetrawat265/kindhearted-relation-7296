@@ -7,7 +7,7 @@ const NewArrivals = () => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
-        axios.get(`https://chalo-api.herokuapp.com/BlueflyNewArrival`)
+        axios.get(`https://cyclic-server.onrender.com/BlueflyNewArrival`)
             .then(res => {
                 setData(res.data);
             })

@@ -29,7 +29,7 @@ const Offer = () => {
 
     return (
         <div >
-            <div style={{ backgroundColor: "black",height:"40px", color: "white", marginTop:"10px" }}>
+            <div style={{ backgroundColor: "black",height:"40px", color: "white", marginTop:"10px"}}>
                 <Flex h="2.5rem" alignItems="center" justifyContent="center" gap="5"><b>{title}</b> : <i>{text}</i></Flex>
             </div>
         </div>

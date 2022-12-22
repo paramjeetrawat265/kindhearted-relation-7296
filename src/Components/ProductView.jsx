@@ -19,7 +19,7 @@ const ProductView = ({ data = [] }) => {
             function MouseExit(){
               img=image
             }
-            return (<Link to={`/products/${id}`}><Box key={id}>
+            return (<Link to={`/products/${title}`}><Box key={id}>
               {console.log(id)}
               <Box w="100%" h="250">
                 <Image w="90%" h="230" src={img} 

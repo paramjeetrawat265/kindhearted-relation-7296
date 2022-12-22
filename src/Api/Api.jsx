@@ -1,7 +1,7 @@
 import axios from "axios";
 export function Create(data = {}) {
     console.log(data)
-    return axios.post("https://chalo-api.herokuapp.com/BlueflyUsers", {
+    return axios.post("https://cyclic-server.onrender.com/BlueflyUsers", {
         fname: data.firstName,
         lname: data.lastName,
         email: data.em,
@@ -10,7 +10,7 @@ export function Create(data = {}) {
 }
 
 export function Loged(params = {}) {
-    return axios.get("https://chalo-api.herokuapp.com/BlueflyUsers", {
+    return axios.get("https://cyclic-server.onrender.com/BlueflyUsers", {
         params: {
             _sort: params.sort,
             _order: params.order

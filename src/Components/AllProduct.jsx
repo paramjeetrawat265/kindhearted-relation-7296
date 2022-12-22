@@ -8,13 +8,13 @@ import Sidebar from './Sidebar';
 
 function getData(query) {
     console.log(query)
-    return axios.get(`https://cyclic-server.onrender.com/BlueflyProduct?q=${query}`)
+    return axios.get(`https://cyclic-server.onrender.com/BlueflyProduct`)
         .then(res => {
             return res
         })
 }
 
-const Search = () => {
+const AllProduct = () => {
     const params = useParams();
     const [data, setData] = useState([]);
 
@@ -25,7 +25,7 @@ const Search = () => {
 
 
     function hell() {
-        getData(params.id).then(res => {
+        getData().then(res => {
             setData(res.data)
         })
             .catch(error => {
@@ -77,9 +77,9 @@ const Search = () => {
 
     return (
         <div>
-            <Heading mt="10" mb="10">Search Result of <span style={{textTransform:"uppercase"}}>{params.id}</span></Heading>
+            <Heading mt="10" mb="10">Products <span style={{textTransform:"uppercase"}}>{params.id}</span></Heading>
             <Flex w="80%" margin="auto" p="10" justifyContent={"space-between"}>
-                <Text>Showing {data.length + 1400} results for <span style={{color:"red", textTransform:"uppercase" , fontWeight:"600"}}>{params.id}</span></Text>
+                <Text></Text>
                 <Select placeholder='Best Selling' w="20%" onChange={changeHandle}>
                     <option value='AZ'>Title A-Z</option>
                     <option value='ZA'>Title Z-A</option>
@@ -98,4 +98,4 @@ const Search = () => {
         </div>
     )
 }
-export default Search
+export default AllProduct

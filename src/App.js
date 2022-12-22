@@ -8,7 +8,7 @@ import BottomCategory from './Components/BottomCategory';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar sticky="top"/>
       <AllRoute/>
       <Footer/>
     </div>
